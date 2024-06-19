@@ -2,12 +2,21 @@ import { Sidebar } from "flowbite-react";
 import { BiBuoy } from "react-icons/bi";
 import { HiArrowSmRight, HiChartPie, HiInbox, HiOutlineCloud, HiOutlineCloudUpload, HiShoppingBag, HiTable, HiUser, HiViewBoards } from "react-icons/hi";
 import Sonorus from '../assets/Sonorus.JPG';
+import { useContext } from "react";
+import { AuthContext } from "../Contexts/AuthProvider";
 
 const SideBar = () => {
+  const {user} = useContext(AuthContext)
   return (
     <Sidebar aria-label="Sidebar with content separator example">
-      <Sidebar.Logo href="#" img={Sonorus} imgAlt="Sonorus logo">
-        Sonorus
+      <Sidebar.Logo 
+      href="/" 
+      img={user?.photoURL} 
+      imgAlt="Sonorus logo"
+      className="w-16 h-16">
+        <p>
+          {user?.displayName} || "Demo User"
+        </p>
       </Sidebar.Logo>
       <Sidebar.Items>
         <Sidebar.ItemGroup>

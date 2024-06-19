@@ -19,10 +19,8 @@ const Banner = () => {
             </div>
         
             {/* right side */}
-            <div>
-                <BannerSlider>
-
-                </BannerSlider>
+            <div className='md:w-1/2 space-y-8 h-full'>
+                <BannerSlider/>
             </div>
         </div>
     </div>

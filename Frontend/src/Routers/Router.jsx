@@ -14,6 +14,9 @@ import UploadMobile from "../dashboard/UploadMobile";
 import ManageMobiles from "../dashboard/ManageMobiles";
 import EditMobiles from "../dashboard/EditMobiles";
 import Signup from "../Components/Signup";
+import Login from "../Components/Login";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import LogOut from "../Components/LogOut";
 
   const router = createBrowserRouter([
     {
@@ -49,7 +52,7 @@ import Signup from "../Components/Signup";
         children: [
             {
                 path: '/admin/dashboard',
-                element: <Dashboard/>
+                element: <PrivateRoute><Dashboard/></PrivateRoute>
             },
             {
                 path: '/admin/dashboard/upload',
@@ -69,6 +72,14 @@ import Signup from "../Components/Signup";
     {
         path: "/sign-up",
         element: <Signup/>
+    },
+    {
+        path: "/login",
+        element: <Login/>
+    },
+    {
+        path: "/logout",
+        element: <LogOut/>
     }
   ]);
 
