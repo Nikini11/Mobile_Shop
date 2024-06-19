@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
 import Apple from '../assets/BannerImages/Apple.jpg';
@@ -34,6 +34,14 @@ const BannerSlider = () => {
     setCurrentIndex(slideIndex);
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 2500); // Change slide every 2500ms
+
+    return () => clearInterval(interval); // Clear interval on component unmount
+  }, [currentIndex]); // Restart interval when currentIndex changes
+
   return (
     <div className='max-w-[1400px] h-[480px] w-full m-auto py-16 px-4 relative group'>
       <div
@@ -66,48 +74,3 @@ const BannerSlider = () => {
 export default BannerSlider
 
 
-// import React, { useRef, useState } from 'react';
-// // Import Swiper React components
-// import { Swiper, SwiperSlide } from 'swiper/react';
-
-// // Import Swiper styles
-// import 'swiper/css';
-// import 'swiper/css/pagination';
-// import 'swiper/css/navigation';
-
-// import './BannerSlider.css';
-
-// // import required modules
-// import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-
-// //import required banner images
-// import img1 from '../assets/BannerImages/Img1.jpg';
-
-// const BannerSlider = () => {
-//   return (
-//     <div className='banner'>
-//         {/* <Swiper
-//         spaceBetween={30}
-//         centeredSlides={true}
-//         autoplay={{
-//           delay: 2500,
-//           disableOnInteraction: false,
-//         }}
-//         pagination={{
-//           clickable: true,
-//         }}
-//         navigation={true}
-//         modules={[Autoplay, Pagination, Navigation]}
-//         className="mySwiper"
-//       >
-//         <SwiperSlide>Slide 1</SwiperSlide>
-//         <SwiperSlide>Slide 2</SwiperSlide>
-//         <SwiperSlide>Slide 3</SwiperSlide>
-//         <SwiperSlide>Slide 4</SwiperSlide>
-//         <SwiperSlide>Slide 5</SwiperSlide>
-//       </Swiper> */}
-//     </div>
-//   )
-// }
-
-// export default BannerSlider

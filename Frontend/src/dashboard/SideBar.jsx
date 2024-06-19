@@ -11,46 +11,32 @@ const SideBar = () => {
     <Sidebar aria-label="Sidebar with content separator example">
       <Sidebar.Logo 
       href="/" 
-      img={user?.photoURL} 
+      img={Sonorus} 
       imgAlt="Sonorus logo"
       className="w-16 h-16">
         <p>
-          {user?.displayName} || "Demo User"
+          Sonorus
         </p>
       </Sidebar.Logo>
       <Sidebar.Items>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="/admin/dashboard" icon={HiChartPie}>
+          <Sidebar.Item href="/admin/dashboard" icon={HiChartPie} className="my-4">
             Dashboard
           </Sidebar.Item>
-          <Sidebar.Item href='/admin/dashboard/upload' icon={HiOutlineCloudUpload}>
+          <Sidebar.Item href='/admin/dashboard/upload' icon={HiOutlineCloudUpload} className="my-4">
             Upload Mobile
           </Sidebar.Item>
-          <Sidebar.Item href='/admin/dashboard/manage' icon={HiInbox}>
-            Manage Mobiles
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiUser}>
-            Users
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiShoppingBag}>
+          <Sidebar.Item href='/admin/dashboard/manage' icon={HiInbox} className="my-4">
             Products
           </Sidebar.Item>
-          <Sidebar.Item href="/login" icon={HiArrowSmRight}>
+          <Sidebar.Item href="#" icon={HiUser} className="my-4">
+            Users
+          </Sidebar.Item>
+          <Sidebar.Item href="/login" icon={HiArrowSmRight} className="my-4">
             Sign In
           </Sidebar.Item>
-          <Sidebar.Item href="/logout" icon={HiTable}>
+          <Sidebar.Item href="/logout" icon={HiTable} className="my-4">
             Log Out
-          </Sidebar.Item>
-        </Sidebar.ItemGroup>
-        <Sidebar.ItemGroup>
-          <Sidebar.Item href="#" icon={HiChartPie}>
-            Upgrade to Pro
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiViewBoards}>
-            Documentation
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={BiBuoy}>
-            Help
           </Sidebar.Item>
         </Sidebar.ItemGroup>
       </Sidebar.Items>

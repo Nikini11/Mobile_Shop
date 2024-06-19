@@ -1,7 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
-import { FaBarsStaggered, FaMobileRetro, FaXmark } from "react-icons/fa6";
+import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 import { AuthContext } from '../Contexts/AuthProvider';
+import logo from '../assets/Sonorus.JPG';
 
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen]=useState(false);
@@ -45,7 +46,7 @@ const NavBar = () => {
         <nav className={`py-4 lg:px-24 px-4 ${isSticky ? "sticky top-0 left-0 right-0 bg-blue-300" : ""}`}>
             <div className='flex justify-between items-center text-base gap-8'>
                 {/* logo */}
-                <Link to="/" className='text-2xl font-bold text-blue-700 flex items-center gap-2'><FaMobileRetro className='inline-block'/>Mobiles</Link>
+                <Link to="/" className='text-2xl font-bold text-blue-700 flex items-center gap-2'><img src={logo} alt='logo' className='h-10'/>Sonorus</Link>
 
                 {/* nav items for large screens */}
                 <ul className='md:flex space-x-12 hidden'>
