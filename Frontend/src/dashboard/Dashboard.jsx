@@ -1,8 +1,13 @@
 import React from 'react'
+import PopularPhones from '../Home/PopularPhones';
+import PromoBanner from '../Home/PromoBanner';
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div>
+      <PopularPhones/>
+      <PromoBanner/>
+    </div>
   )
 }
 

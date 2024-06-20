@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import MobileCards from '../Components/MobileCards';
 
-const SecondHand = () => {
+const Other = () => {
     const [mobiles, setMobiles] = useState([]);
 
     useEffect(() => {
@@ -9,9 +9,9 @@ const SecondHand = () => {
     },[])
   return (
     <div>
-        <MobileCards mobiles={mobiles} headline="Second Hand Items"/>
+        <MobileCards mobiles={mobiles} headline="Other Items"/>
     </div>
   )
 }
 
-export default SecondHand
+export default Other

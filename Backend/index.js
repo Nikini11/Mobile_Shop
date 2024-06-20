@@ -49,14 +49,21 @@ async function run() {
         // })
 
         // get all mobiles & find by a category from db
-        app.get("/all-mobiles", async (req, res) => {
+        // 
+        // GET all mobiles or search by model
+        app.get('/all-mobiles', async (req, res) => {
+            try {
             let query = {};
-            if (req.query?.brand) {
-                query = { brand: req.query.brand }
+            if (req.query.model) {
+                query = { model: { $regex: new RegExp(req.query.model, 'i') } };
             }
             const result = await mobileCollections.find(query).toArray();
-            res.send(result)
-        })
+            res.json(result);
+            } catch (error) {
+            console.error('Error retrieving mobiles:', error);
+            res.status(500).json({ error: 'Internal server error' });
+            }
+        });
 
         // update a mobile method
         app.patch("/mobile/:id", async (req, res) => {

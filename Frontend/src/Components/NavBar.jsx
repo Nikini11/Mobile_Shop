@@ -1,7 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
-import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
+import { FaBarsStaggered, FaXmark, FaCartShopping } from "react-icons/fa6";
 import { AuthContext } from '../Contexts/AuthProvider';
+import { CartContext } from '../Contexts/CartContext';
 import logo from '../assets/Sonorus.JPG';
 
 const NavBar = () => {
@@ -9,7 +10,7 @@ const NavBar = () => {
     const [isSticky, setIsSticky]=useState(false);
 
     const {user} = useContext(AuthContext)
-    console.log(user)
+    const { totalQuantity } = useContext(CartContext);
 
     const toggleMenu = () =>{
         setIsMenuOpen(!isMenuOpen);
@@ -56,9 +57,17 @@ const NavBar = () => {
                     }
                 </ul>
 
-                {/* button for large screens */}
+                {/* button for large screens
                 <div className='space-x-12 hidden lg:flex items-center'>
                     <button><FaBarsStaggered className='w-5 hover:text-blue-700'/></button>
+                </div> */}
+
+                {/* Cart icon for large screens */}
+                <div className='hidden lg:flex items-center space-x-6'>
+                    <Link to="/cart" className='flex items-center'>
+                    <FaCartShopping className='w-5 h-5 text-black mr-1' />
+                    <span className='text-black'>{totalQuantity}</span>
+                    </Link>
                 </div>
 
                 {/* menu button for small screens */}
@@ -78,6 +87,11 @@ const NavBar = () => {
                     navItems.map(({link, path}) => <Link key={path} to={path} 
                     className='block text-base text-white uppercase cursor-pointer'>{link}</Link>)
                 }
+                {/* Cart icon for small screens */}
+                <Link to="/cart" className='flex items-center'>
+                    <FaCartShopping className='w-5 h-5 text-white mr-1' />
+                    <span className='text-white'>{totalQuantity}</span>
+                </Link>
             </div>
         </nav>
     </header>

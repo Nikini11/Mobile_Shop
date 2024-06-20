@@ -44,7 +44,7 @@ const UploadMobile = () => {
   }
 
   return (
-    <div className='px-4 my-12'>
+    <div className='mt-0.25 px-4 lg:px-24' style={{ background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(207,241,240,1) 0%, rgba(80,147,138,1) 100%)', minHeight: '100vh', padding: '2rem' }}>
       <h2 className='mb-8 text-3xl font-bold'>Upload a Mobile</h2>
         <form onSubmit={handleMobileSubmit} className="flex lg:w-[1180px] flex-col flex-wrap gap-4">
           

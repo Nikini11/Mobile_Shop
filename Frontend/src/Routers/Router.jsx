@@ -17,6 +17,8 @@ import Signup from "../Components/Signup";
 import Login from "../Components/Login";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import LogOut from "../Components/LogOut";
+import Cart from "../Shop/Cart";
+import Promo from "../Components/Promo";
 
   const router = createBrowserRouter([
     {
@@ -43,7 +45,15 @@ import LogOut from "../Components/LogOut";
                 path:'/mobile/:id',
                 element: <SingleMobile/>,
                 loader: ({params}) => fetch(`http://localhost:5000/mobile/${params.id}`)
-            }
+            },
+            {
+                path: '/cart',
+                element: <Cart />
+            },
+            {
+                path: '/promo',
+                element: <Promo />
+            },
         ]
     },
     {

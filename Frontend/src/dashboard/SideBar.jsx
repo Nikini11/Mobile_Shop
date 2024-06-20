@@ -8,13 +8,14 @@ import { AuthContext } from "../Contexts/AuthProvider";
 const SideBar = () => {
   const {user} = useContext(AuthContext)
   return (
-    <Sidebar aria-label="Sidebar with content separator example">
+    <div className="h-screen">
+      <Sidebar aria-label="Sidebar with content separator example" className="h-full bg-gray-800 text-white">
       <Sidebar.Logo 
       href="/" 
       img={Sonorus} 
       imgAlt="Sonorus logo"
       className="w-16 h-16">
-        <p>
+        <p className="text-black">
           Sonorus
         </p>
       </Sidebar.Logo>
@@ -27,7 +28,7 @@ const SideBar = () => {
             Upload Mobile
           </Sidebar.Item>
           <Sidebar.Item href='/admin/dashboard/manage' icon={HiInbox} className="my-4">
-            Products
+            Inventory
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={HiUser} className="my-4">
             Users
@@ -41,6 +42,8 @@ const SideBar = () => {
         </Sidebar.ItemGroup>
       </Sidebar.Items>
     </Sidebar>
+    </div>
+    
   )
 }
 

@@ -3,7 +3,7 @@ import Banner from '../Components/Banner'
 import PopularPhones from './PopularPhones'
 import FavMobile from './FavMobile'
 import PromoBanner from './PromoBanner'
-import SecondHand from './SecondHand'
+import Other from './Other'
 import Review from './Review'
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
       <PopularPhones/>
       <FavMobile/>
       <PromoBanner/>
-      <SecondHand/>
+      <Other/>
       <Review/>
     </div>
   )

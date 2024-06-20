@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-//import './MobileCards.css';
-
 // import required modules
 import { Pagination } from 'swiper/modules';
 import { FaCartShopping } from 'react-icons/fa6';
@@ -43,19 +41,18 @@ const MobileCards = ({headline, mobiles}) => {
      
         {
             mobiles.map(mobile => <SwiperSlide key={mobile._id}>
-                <Link to={`/mobile/${mobile._id}`}>
-                    <div className='relative'>
-                        <img src={mobile.imgURL} alt=""/>
-                        <div className='absolute top-3 right-3 bg-blue-600 hover:bg-black p-2 rounded'>
-                          <FaCartShopping className='w-4 h-4 text-white'/>
-                        </div>
-                    </div>
-                    <div>
-                        <h3>{mobile.model}</h3>
-                        <p>{mobile.brand}</p>
-                        <p>{mobile.price}</p>
-                    </div>
-                </Link>
+              <Link to={`/mobile/${mobile._id}`}>
+                <div className='relative p-4 border rounded-lg shadow-lg h-full flex flex-col items-center'>
+                  <div className='w-full h-48 flex items-center justify-center'>
+                    <img src={mobile.imgURL} alt="" className='object-cover h-full' />
+                  </div>
+                  <div className='mt-4 text-center'>
+                    <h3 className='text-lg font-semibold'>{mobile.model}</h3>
+                    <p className='text-gray-500'>{mobile.brand}</p>
+                    <p className='text-blue-700 font-bold'>{mobile.price}</p>
+                  </div>
+                </div>
+              </Link>
             </SwiperSlide>)
         } 
       </Swiper>
