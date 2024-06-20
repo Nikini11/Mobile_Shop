@@ -39,8 +39,20 @@ const ManageMobiles = () => {
             </Table.Cell>
             <Table.Cell>{mobile.model}</Table.Cell>
             <Table.Cell>{mobile.brand}</Table.Cell>
-            <Table.Cell>{mobile.specifications}</Table.Cell>
-            <Table.Cell>{mobile.description}</Table.Cell>
+            <Table.Cell>{mobile.specifications}
+                  {/* <ul className="list-disc pl-4">
+                    {mobile.specifications.split('\n').map((point, idx) => (
+                      <li key={idx}>{point.trim()}</li>
+                    ))}
+                  </ul> */}
+                </Table.Cell>
+            <Table.Cell>{mobile.Description}
+                  {/* <ul className="list-disc pl-4">
+                    {mobile.description.split('\n').map((point, idx) => (
+                      <li key={idx}>{point.trim()}</li>
+                    ))}
+                  </ul> */}
+            </Table.Cell>
             <Table.Cell>{mobile.stock}</Table.Cell>
             <Table.Cell>{mobile.price}</Table.Cell>
             <Table.Cell>
@@ -48,7 +60,7 @@ const ManageMobiles = () => {
                     to={`/admin/dashboard/edit-mobiles/${mobile._id}`}>
                       Edit
               </Link>
-              <button onClick={() => handleDelete(mobile._id)} className='bg-red-600 px-4 py-1 font-semibold text-white rounded-sm'>Delete</button>
+              <button onClick={() => handleDelete(mobile._id)} className='bg-red-600 px-4 py-1 font-semibold text-white rounded-sm mb-2 md:mb-0 md:ml-5'>Delete</button>
             </Table.Cell>
           </Table.Row>
           </Table.Body>

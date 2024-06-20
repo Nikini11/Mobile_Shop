@@ -49,7 +49,8 @@ const MobileCards = ({headline, mobiles}) => {
                   <div className='mt-4 text-center'>
                     <h3 className='text-lg font-semibold'>{mobile.model}</h3>
                     <p className='text-gray-500'>{mobile.brand}</p>
-                    <p className='text-blue-700 font-bold'>{mobile.price}</p>
+                    <p className='text-gray-500'>{mobile.specifications}</p>
+                    <p className='text-blue-700 font-bold'>Rs. {mobile.price}</p>
                   </div>
                 </div>
               </Link>

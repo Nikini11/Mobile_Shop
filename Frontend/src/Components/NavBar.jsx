@@ -57,11 +57,6 @@ const NavBar = () => {
                     }
                 </ul>
 
-                {/* button for large screens
-                <div className='space-x-12 hidden lg:flex items-center'>
-                    <button><FaBarsStaggered className='w-5 hover:text-blue-700'/></button>
-                </div> */}
-
                 {/* Cart icon for large screens */}
                 <div className='hidden lg:flex items-center space-x-6'>
                     <Link to="/cart" className='flex items-center'>

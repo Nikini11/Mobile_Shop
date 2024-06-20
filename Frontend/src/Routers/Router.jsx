@@ -18,7 +18,7 @@ import Login from "../Components/Login";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import LogOut from "../Components/LogOut";
 import Cart from "../Shop/Cart";
-import Promo from "../Components/Promo";
+import Promo from '../Components/Promo';
 
   const router = createBrowserRouter([
     {

@@ -20,7 +20,7 @@ const Shop = () => {
               {mobile.model}
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              {mobile.price}
+              Rs. {mobile.price}
             </p>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               In stock : {mobile.stock}

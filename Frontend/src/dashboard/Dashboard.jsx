@@ -5,7 +5,7 @@ import PromoBanner from '../Home/PromoBanner';
 const Dashboard = () => {
   return (
     <div>
-      <PopularPhones/>
+      {/* <PopularPhones/> */}
       <PromoBanner/>
     </div>
   )

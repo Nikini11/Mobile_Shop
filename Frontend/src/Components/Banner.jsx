@@ -48,11 +48,11 @@ const Banner = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {searchResults.map((mobile) => (
                     <div key={mobile._id} className='bg-white shadow-lg rounded-lg overflow-hidden'>
-                    <div className='w-full h-48'>
-                      <img src={mobile.imgURL} alt={mobile.model} className='w-full h-full object-cover' />
+                    <div className='w-full h-48 flex items-center justify-center'>
+                      <img src={mobile.imgURL} alt={mobile.model} className='object-cover h-full ' />
                     </div>
                     <div className='p-6 flex flex-col'>
-                        <h3 className='text-2xl font-bold mb-2 text-blue-700'>{mobile.model}</h3>
+                        <h4 className='text-xl font-bold mb-2 text-blue-700'>{mobile.model}</h4>
                         <p className='text-gray-700 flex-grow'>{mobile.description}</p>
                         <Link to={`/mobile/${mobile._id}`} className='text-blue-700 font-semibold hover:text-blue-900 mt-auto'>
                         View

@@ -25,11 +25,14 @@ const UploadMobile = () => {
     const model = form.model.value;
     const brand = form.brand.value;
     const imgURL = form.imgURL.value;
-    const description = form.description.value;
+    const specifications = form.specifications.value;
+    const Description = form.Description.value;
+    const colors = form.colors.value;
+    const stock = form.stock.value;
     const price = form.price.value;
 
     const mobileObj = {
-      model, brand, imgURL, description, price
+      model, brand, imgURL, specifications, Description, price, colors, stock
     }
 
     fetch("http://localhost:5000/upload-mobile", {
@@ -40,7 +43,11 @@ const UploadMobile = () => {
       body: JSON.stringify(mobileObj)
     }).then(res => res.json()).then(data => {
       alert("Mobile uploaded successfully!")
-    })
+      form.reset();
+    }).catch(error => {
+      console.error('Error uploading mobile:', error);
+      alert("Failed to upload mobile. Please try again.");
+    });
   }
 
   return (
@@ -73,19 +80,40 @@ const UploadMobile = () => {
             </div>
             <TextInput id="imgURL" name='imgURL' type="text" placeholder="Mobile Image URL" required />
           </div>
+
+          <div className='lg:w-full'>
+            <div className="mb-2 block">
+              <Label htmlFor="specifications" value="Specifications" />
+            </div>
+            <Textarea id="specifications" name='specifications' placeholder="RAM & Storage" required rows={2} />
+          </div>
           
           <div className='lg:w-full'>
             <div className="mb-2 block">
-              <Label htmlFor="description" value="Description" />
+              <Label htmlFor="Description" value="Description" />
             </div>
-            <Textarea id="description" placeholder="Mention about RAM, Storage, Battery health, Color & etc." required rows={6} />
+            <Textarea id="Description" name='Description' placeholder="Key features" required rows={8} />
+          </div>
+
+          <div className='lg:w-full'>
+            <div className="mb-2 block">
+              <Label htmlFor="colors" value="Colors" />
+            </div>
+            <TextInput id="colors" name='colors' type="text" placeholder="Available colors" required />
+          </div>
+
+          <div className='lg:w-full'>
+            <div className="mb-2 block">
+              <Label htmlFor="stock" value="Stock" />
+            </div>
+            <TextInput id="stock" name='stock' type="number" placeholder="Quantity" required />
           </div>
 
           <div className='lg:w-full'>
             <div className="mb-2 block">
               <Label htmlFor="price" value="Price" />
             </div>
-            <TextInput id="price" name='price' type="text" placeholder="Rs." required />
+            <TextInput id="price" name='price' type="number" placeholder="Rs." required />
           </div>
 
           <Button type="submit">Upload Mobile</Button>
