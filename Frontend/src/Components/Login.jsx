@@ -10,7 +10,9 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const from = location.state?.from?.pathname || "/";
+  const from= '/admin/dashboard';
+
+  // const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();

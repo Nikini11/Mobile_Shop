@@ -38,7 +38,7 @@ const NavBar = () => {
         {link: "Home", path: "/"},
         {link: "About", path: "/about"},
         {link: "Shop", path: "/shop"},
-        {link: "Sell Your Mobile", path: "/admin/dashboard"},
+        {link: "Sell Your Mobile", path: "/sign-up"},
         {link: "Blog", path: "/blog"},
     ]
 

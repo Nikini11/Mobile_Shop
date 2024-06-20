@@ -25,16 +25,10 @@ const SideBar = () => {
             Dashboard
           </Sidebar.Item>
           <Sidebar.Item href='/admin/dashboard/upload' icon={HiOutlineCloudUpload} className="my-4">
-            Upload Mobile
+            Upload 
           </Sidebar.Item>
           <Sidebar.Item href='/admin/dashboard/manage' icon={HiInbox} className="my-4">
             Inventory
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiUser} className="my-4">
-            Users
-          </Sidebar.Item>
-          <Sidebar.Item href="/login" icon={HiArrowSmRight} className="my-4">
-            Sign In
           </Sidebar.Item>
           <Sidebar.Item href="/logout" icon={HiTable} className="my-4">
             Log Out
