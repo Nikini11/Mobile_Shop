@@ -19,9 +19,9 @@ const uri = "mongodb+srv://mobile-store:Ayubowan1190!@mobile-shop.las9ozs.mongod
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
     serverApi: {
-        version: ServerApiVersion.v1,
-        strict: true,
-        deprecationErrors: true,
+        version: ServerApiVersion.v1, //want to use version 1 of the MongoDB server API
+        strict: true, //Enables strict mode, ensuring that the API behaves in a more predictable and consistent manner.
+        deprecationErrors: true, //Ensures that any deprecated features will cause errors, helping you to avoid using outdated or soon-to-be-removed functionality.
     }
 });
 
@@ -33,7 +33,7 @@ async function run() {
         const mobileCollections = client.db("MobileInventory").collection("Mobiles");
 
 
-        // insert a book to db: Post Method
+        // insert a mobile to db: Post Method
         app.post("/upload-mobile", async (req, res) => {
             const data = req.body;
             // console.log(data);
@@ -41,23 +41,14 @@ async function run() {
             res.send(result);
         })
 
-        // // get all mobiles from db
-        // app.get("/all-mobiles", async (req, res) => {
-        //     const mobiles = mobileCollections.find();
-        //     const result = await mobiles.toArray();
-        //     res.send(result)
-        // })
-
-        // get all mobiles & find by a category from db
-        // 
         // GET all mobiles or search by model
         app.get('/all-mobiles', async (req, res) => {
             try {
             let query = {};
             if (req.query.model) {
-                query = { model: { $regex: new RegExp(req.query.model, 'i') } };
+                query = { model: { $regex: new RegExp(req.query.model, 'i') } };// If the 'model' parameter is present, create a case-insensitive regex query
             }
-            const result = await mobileCollections.find(query).toArray();
+            const result = await mobileCollections.find(query).toArray();//search and converts into an array contains all matching documents
             res.json(result);
             } catch (error) {
             console.error('Error retrieving mobiles:', error);
@@ -112,5 +103,5 @@ async function run() {
 run().catch(console.dir);
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`App listening on port ${port}`)
 })
